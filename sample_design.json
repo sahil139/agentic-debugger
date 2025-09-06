@@ -1,0 +1,11 @@
+{
+  "nodes": [
+    {"name": "api", "replicas": 1, "zones": ["az1"], "type": "service"},
+    {"name": "db", "replicas": 1, "type": "db", "read_replicas": 0, "stateful": true}
+  ],
+  "connections": [
+    {"from": "api", "to": "db", "mode": "sync"}
+  ]
+}
+
+
